@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="yes.css">
+    
+</head>
+<body>
+   <label> Skriv in ett tal
+    <input type="number" id="number" />
+    
+   </label>
+   <button onclick="checkNumber()">Kolla Tal</button>
+
+   <script>
+           function checkNumber() {
+            let number = document.getElementById("number").value;
+
+            if (number % 2 == 0) {
+                alert("talet är jämnt)");
+            }
+            else {
+                alert("talet är udda!");
+            }
+           }
+
+   </script>
+</body>
+</html>

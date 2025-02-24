@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random site</title>
+    <link rel="stylesheet" href="yes.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+        </header>
+
+        <nav>
+            <a href="yes.html" class="sido-meny">Home</a>
+            <a href="tester.html" class="sido-meny">Tester</a>
+            <a href="about.html" class="sido-meny">About</a>
+            <a href="contact.html" class="sido-meny">Contact</a>
+        </nav>
+
+        <main>
+            <h1>Reaction Time Tester</h1>
+            <button id="start-btn">Start</button>
+            <div id="reaction-area">Wait for Green!</div>
+            <p id="reaction-time">Your reaction time: <span>0</span> ms</p>
+            
+            <script>
+                const startButton = document.getElementById("start-btn"); // startknapp
+                const reactionArea = document.getElementById("reaction-area"); // den rutan som står wait for green
+                const reactionTimeDisplay = document.getElementById("reaction-time").getElementsByTagName("span")[0]; //visar hur lång din reaktions tid är
+        
+                let startTime, endTime, isWaiting = false; // start, väntetid och slut
+        
+                startButton.addEventListener("click", startTest);
+        
+                function startTest() {
+                    startButton.disabled = true;
+                    reactionArea.textContent = "Wait for Green!";
+                    reactionArea.style.backgroundColor = "#d3d3d3"; // färg på rutan där man ska klicka
+        
+                    isWaiting = true;
+                    setTimeout(() => {
+                        reactionArea.textContent = "Click Now!";
+                        reactionArea.style.backgroundColor = "green";
+                        startTime = Date.now();
+                    }, Math.floor(Math.random() * 5000) + 2000); // hur lång tid inna rutan blir grön. max 7 sekunder
+                }
+        
+                reactionArea.addEventListener("click", function () {
+                    if (isWaiting) {
+                        endTime = Date.now();
+                        const reactionTime = endTime - startTime; 
+                        reactionTimeDisplay.textContent = reactionTime + ""; // visar din reaktionstid
+                        isWaiting = false;
+                        startButton.disabled = false; // efter di klickat start
+                        reactionArea.textContent = "Click to Start Again"; // knapp för att köra igen
+                        reactionArea.style.backgroundColor = "#d3d3d3"; // koden efter du klickat start tills du ser din reaktionstid.
+                    }
+                });
+            </script>
+            
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    padding: 50px;
+                    background-color: #f0f0f0;
+                }
+                #reaction-area {
+                    width: 300px;
+                    height: 300px;
+                    margin: 50px auto;
+                    background-color: #d3d3d3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 20px;
+                    border: 2px solid #000;
+                    cursor: pointer;
+                }
+                #start-btn {
+                    font-size: 18px;
+                    padding: 10px 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                }
+                #start-btn:hover {
+                    background-color: #45a049; 
+                }
+            </style>
+            
+           
+            
+        </main>
+
+        <footer>
+           
+        </footer>
+    </div>
+</body>

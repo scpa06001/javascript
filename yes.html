@@ -6,25 +6,45 @@
     <title>Random site</title>
     <link rel="stylesheet" href="yes.css">
 </head>
-<body>
+<body id="kroppen">
     <div class="container">
         <header>
             <button id="theme-switch">
-             <img class="picture2" src="dark-theme-icon-512x512-185rlszm.png" alt=""> 
+             <img class="picture2" src="dark-theme-icon-512x512-185rlszm.png" alt="" onclick="change();"> 
             </button>
-            
+            <script>
+                function change(){
+                    var bodyelement = document.body;
+                    bodyelement.classList.toggle("dark-mode");
+                    var mainelement = document.getElementById("mainelement");
+                    mainelement.classList.toggle("dark-mode");
+                    var footerelement = document.getElementById("footerelement");
+                    footerelement.classList.toggle("dark-mode");
+                    var navelement = document.getElementById("navelement");
+                    navelement.classList.toggle("dark-mode");
+                    var sidomeny1 = document.getElementById("sidomeny1");
+                    sidomeny1.classList.toggle("dark-mode");
+                    var sidomeny2 = document.getElementById("sidomeny2");
+                    sidomeny2.classList.toggle("dark-mode");
+                    var sidomeny3 = document.getElementById("sidomeny3");
+                    sidomeny3.classList.toggle("dark-mode");
+                    var sidomeny4 = document.getElementById("sidomeny4");
+                    sidomeny4.classList.toggle("dark-mode");
+                }
+            </script>
+
         </header>
 
-        <nav>
-            <a href="yes.html" class="sido-meny">Home</a>
-            <a href="tester.html" class="sido-meny">Tester</a>
-            <a href="about.html" class="sido-meny">About</a>
-            <a href="contact.html" class="sido-meny">Contact</a>
+        <nav id="navelement">
+            <a href="yes.html" class="sido-meny" id="sidomeny1">Home</a>
+            <a href="tester.html" class="sido-meny" id="sidomeny2">Tester</a>
+            <a href="about.html" class="sido-meny" id="sidomeny3">About</a>
+            <a href="contact.html" class="sido-meny" id="sidomeny4">Contact</a>
             
             
         </nav>
 
-        <main>
+        <main id="mainelement">
             <h2>El classic reaction time tester </h2>
             <p> This is a website where you can test your reaction time</p>
             <p2> Mental chronometry is the scientific study of processing speed or reaction time on cognitive tasks to infer the content, duration, and temporal sequencing of mental operations. 
@@ -35,7 +55,7 @@
             <img class="picture" src="Reaction_time_stages.png" alt="">
         </main>
 
-        <footer>
+        <footer id="footerelement">
            
         </footer>
     </div>

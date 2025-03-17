@@ -5,21 +5,18 @@
     --secondary-text: #232738;
     --primary-color: #3a435d;
     --accent-color: #0071ff;
-
+    --dark-base-color: rgb(0, 0, 0);
+    --dark-base-variant: #242424;
+    --dark-text-color: #ffffff;
+    --dark-secondary-text: #bbbbbb;
+    --dark-primary-color: #2a2d36;
+    --dark-accent-color: #5ce600;
 }
 
-.darkmode{
-    --base-color: rgb(0, 0, 0);
-    --base-variant: #242424;
-    --text-color: #ffffff;
-    --secondary-text: #bbbbbb;
-    --primary-color: #2a2d36;
-    --accent-color: #5ce600;
-
+.dark-mode{
+    background-color: var(--dark-base-variant)!important;
+    color: var(--dark-text-color)!important;
 }
-
-
-
 
 body {
     margin: 0;
@@ -105,17 +102,4 @@ footer {
     position: fixed;
     top: 20px;
     right: 20px;
-}
-#theme-switch svg{
-    fill: var(--primary-color)
-}
-#theme-switch svg:last-child{
-    display: none;
-}
-.darkmode #theme-switch svg:first-child{
-    display: none;
-}
-
-.darkmode #theme-switch svg:last-child{
-    display: block;
 }
